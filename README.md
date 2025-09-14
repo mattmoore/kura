@@ -6,6 +6,10 @@ File storage manager, designed to work with [cats-effect](https://typelevel.org/
 - AWS S3
 - GCP
 
+Named after [traditional Japanese storehouse (Kura)](https://en.wikipedia.org/wiki/Kura_(storehouse))
+
+![Kura (storehouse)](Kura_cafe.JPG)
+
 ## Getting Started
 
 Add the following dependencies:
@@ -32,4 +36,10 @@ libraryDependencies ++= Seq(
 
 ```scala
 val fileDevice = kura.Device[F] = kura.filesystem[F](Option("storage"))
+```
+
+### S3 Bucket Storage
+
+```scala
+val s3Device = kura.Device[F] = kura.s3[F](Option("storage"))
 ```
