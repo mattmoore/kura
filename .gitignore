@@ -1,0 +1,8 @@
+out/
+.metals/
+.bloop/
+mill.*
+.bsp
+.idea
+.vscode
+/storage/
