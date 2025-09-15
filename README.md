@@ -32,13 +32,20 @@ libraryDependencies ++= Seq(
 
 ## Usage
 
-### Filesystem Storage
+Assuming you have some effect type in scope (yes, I'm trying to encourage tagless final):
+
+```scala
+type F[A] = IO[A]
+val F = Async[F]
+```
+
+### Filesystem Device
 
 ```scala
 val fileDevice = kura.Device[F] = kura.filesystem[F](Option("storage"))
 ```
 
-### S3 Bucket Storage
+### S3 Bucket Device
 
 ```scala
 val s3Device = kura.Device[F] = kura.s3[F](Option("storage"))
