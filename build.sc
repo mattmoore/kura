@@ -27,7 +27,7 @@ object kura extends ScalaModule, ScalafmtModule, PublishModule, SonatypeCentralP
     description = "Kura",
     organization = "io.mattmoore",
     url = "https://github.com/mattmoore/kura",
-    licenses = Seq(License.MIT),
+    licenses = Seq(License.`Apache-2.0`),
     versionControl = VersionControl.github("mattmoore", "kura"),
     developers = Seq(Developer("mattmoore", "Matt Moore", "https://github.com/mattmoore")),
   )
