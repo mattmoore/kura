@@ -3,6 +3,7 @@ package kura
 import cats.effect.*
 import kura.devices.*
 import org.typelevel.log4cats.Logger
+import com.google.auth.oauth2.GoogleCredentials
 
 type Device[F[_]] = devices.Device[F]
 type FilesystemDevice[F[_]] = devices.FilesystemDevice[F]
@@ -12,4 +13,7 @@ def filesystem[F[_]: Async: Logger](root: Option[String] = None): FilesystemDevi
 
 def s3[F[_]: Async: Logger](root: Option[String] = None): S3Device[F] = S3Device(root)
 
-def google[F[_]: Async: Logger](root: Option[String] = None): GoogleCloudDevice[F] = GoogleCloudDevice(root)
+def google[F[_]: Async: Logger](
+    root: Option[String] = None,
+    credentials: GoogleCredentials,
+): GoogleCloudDevice[F] = GoogleCloudDevice(root, credentials)
