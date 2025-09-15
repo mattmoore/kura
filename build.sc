@@ -9,6 +9,8 @@ object versions {
   val catsCore = "2.13.0"
   val catsEffect = "3.6.3"
   val catsRetry = "4.0.0"
+  val awsSdk = "2.33.9"
+  val googleCloudStorage = "2.57.0"
   val log4cats = "2.7.1"
   val logback = "1.5.18"
   val logstashLogbackEncoder = "8.1"
@@ -53,6 +55,11 @@ object kura extends ScalaModule, ScalafmtModule, PublishModule, SonatypeCentralP
     mvn"co.fs2::fs2-core:${versions.fs2}",
     mvn"co.fs2::fs2-io:${versions.fs2}",
     mvn"co.fs2::fs2-scodec:${versions.fs2}",
+    // AWS SDK
+    mvn"software.amazon.awssdk:bom:${versions.awsSdk}",
+    mvn"software.amazon.awssdk:s3:${versions.awsSdk}",
+    // Google cloud storage
+    mvn"com.google.cloud:google-cloud-storage:${versions.googleCloudStorage}",
     // weaver
     mvn"org.typelevel::weaver-cats:${versions.weaver}",
     // testcontainers
