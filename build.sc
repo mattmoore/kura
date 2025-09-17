@@ -1,8 +1,12 @@
+//| mvnDeps: ["com.lihaoyi::mill-contrib-versionfile:$MILL_VERSION"]
+
 import mill.*
 import scalalib.*
 import scalafmt.*
 import publish.*
-import mill.api.Task.Simple
+import mill.contrib.versionfile.VersionFileModule
+
+object versionFile extends VersionFileModule
 
 object versions {
   val scala = "3.7.2"
@@ -23,7 +27,7 @@ object versions {
 
 object kura extends ScalaModule, ScalafmtModule, PublishModule, SonatypeCentralPublishModule {
   def scalaVersion = versions.scala
-  def publishVersion = "0.0.2"
+  def publishVersion = versionFile.currentVersion().toString
 
   def pomSettings = PomSettings(
     description = "Kura",

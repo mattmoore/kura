@@ -18,7 +18,7 @@ mill:
 
 ```scala
 def mvnDeps = Seq(
-  mvn"io.mattmoore::kura:0.0.1"
+  mvn"io.mattmoore::kura:${version}"
 )
 ```
 
@@ -26,7 +26,7 @@ sbt:
 
 ```scala
 libraryDependencies ++= Seq(
-  "io.mattmoore" %% "kura" % "0.0.1"
+  "io.mattmoore" %% "kura" % version
 )
 ```
 
