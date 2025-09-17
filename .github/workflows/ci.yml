@@ -9,7 +9,6 @@ jobs:
       - uses: actions/setup-java@v3 # Set up a jdk
         with:
           distribution: temurin
-          java-version: 8
-          cache: mill # Cache the artifacts downloaded by sbt accross CI runs
+          java-version: 21
       - name: unit tests # Custom action consisting of a shell command
         run: ./mill __.test
