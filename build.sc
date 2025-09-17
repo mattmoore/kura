@@ -17,13 +17,13 @@ object versions {
   val ciris = "3.6.0"
   val circe = "0.14.14"
   val fs2 = "3.12.0"
-  val weaver = "0.9.3"
+  val weaver = "0.10.1"
   val testContainers = "0.41.4"
 }
 
 object kura extends ScalaModule, ScalafmtModule, PublishModule, SonatypeCentralPublishModule {
   def scalaVersion = versions.scala
-  def publishVersion = "0.0.1"
+  def publishVersion = "0.0.2"
 
   def pomSettings = PomSettings(
     description = "Kura",
@@ -60,13 +60,14 @@ object kura extends ScalaModule, ScalafmtModule, PublishModule, SonatypeCentralP
     mvn"software.amazon.awssdk:s3:${versions.awsSdk}",
     // Google cloud storage
     mvn"com.google.cloud:google-cloud-storage:${versions.googleCloudStorage}",
-    // weaver
-    mvn"org.typelevel::weaver-cats:${versions.weaver}",
     // testcontainers
     mvn"com.dimafeng::testcontainers-scala:${versions.testContainers}",
   )
 
-  object test extends ScalaTests {
+  object test extends ScalaTests, TestModule.Weaver {
+    def mvnDeps = Seq(
+      mvn"org.typelevel::weaver-cats:${versions.weaver}"
+    )
     def testFramework = "weaver.framework.CatsEffect"
   }
 }
