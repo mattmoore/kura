@@ -1,6 +1,7 @@
 # Kura
 
-![GitHub Tag](https://img.shields.io/github/v/tag/mattmoore/kura)
+[![GitHub Tag](https://img.shields.io/github/v/tag/mattmoore/kura)](https://github.com/mattmoore/kura/tags)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.mattmoore/kura_3)](https://repo1.maven.org/maven2/io/mattmoore/kura_3/)
 
 File storage manager, designed to work with [cats-effect](https://typelevel.org/cats-effect/) and [fs2](https://fs2.io/), supporting multiple backend options:
 
