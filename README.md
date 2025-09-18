@@ -1,5 +1,7 @@
 # Kura
 
+![GitHub Tag](https://img.shields.io/github/v/tag/mattmoore/kura)
+
 File storage manager, designed to work with [cats-effect](https://typelevel.org/cats-effect/) and [fs2](https://fs2.io/), supporting multiple backend options:
 
 - Local files
